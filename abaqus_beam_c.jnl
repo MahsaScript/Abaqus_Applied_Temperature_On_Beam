@@ -1,0 +1,2014 @@
+# -*- coding: mbcs -*-
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(10.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=THREE_D, name='Beam', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Beam'].BaseSolidExtrude(depth=20.0, sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__edit__', objectToCopy=
+    mdb.models['Model-1'].parts['Beam'].features['Solid extrude-1'].sketch)
+mdb.models['Model-1'].parts['Beam'].projectReferencesOntoSketch(filter=
+    COPLANAR_EDGES, sketch=mdb.models['Model-1'].sketches['__edit__'], 
+    upToFeature=
+    mdb.models['Model-1'].parts['Beam'].features['Solid extrude-1'])
+mdb.models['Model-1'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    2.55534362792969, -0.505214929580688), value=10.0, vertex1=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[3], vertex2=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[0])
+mdb.models['Model-1'].sketches['__edit__'].ObliqueDimension(textPoint=(
+    -0.817604541778564, 0.591534376144409), value=1.0, vertex1=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[0], vertex2=
+    mdb.models['Model-1'].sketches['__edit__'].vertices[1])
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+del mdb.models['Model-1'].sketches['__edit__']
+mdb.models['Model-1'].parts['Beam'].features['Solid extrude-1'].setValues(
+    depth=1.0)
+mdb.models['Model-1'].parts['Beam'].regenerate()
+mdb.models['Model-1'].parts['Beam'].regenerate()
+mdb.models['Model-1'].parts['Beam'].regenerate()
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(10.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-2', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-2'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(1.0, 0.5))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-3', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-3'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(0.5, 0.5))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-4', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-4'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+mdb.models['Model-1'].ConstrainedSketch(name='__profile__', sheetSize=200.0)
+mdb.models['Model-1'].sketches['__profile__'].rectangle(point1=(0.0, 0.0), 
+    point2=(3.0, 1.0))
+mdb.models['Model-1'].Part(dimensionality=TWO_D_PLANAR, name='Part-5', type=
+    DEFORMABLE_BODY)
+mdb.models['Model-1'].parts['Part-5'].BaseShell(sketch=
+    mdb.models['Model-1'].sketches['__profile__'])
+del mdb.models['Model-1'].sketches['__profile__']
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.DatumCsysByDefault(CARTESIAN)
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-2-1', 
+    part=mdb.models['Model-1'].parts['Part-2'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-3-1', 
+    part=mdb.models['Model-1'].parts['Part-3'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-4-1', 
+    part=mdb.models['Model-1'].parts['Part-4'])
+mdb.models['Model-1'].rootAssembly.Instance(dependent=ON, name='Part-5-1', 
+    part=mdb.models['Model-1'].parts['Part-5'])
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-5-1', ), 
+    vector=(10.0, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-3-1', ), 
+    vector=(5.0, -0.5, 0.0))
+mdb.models['Model-1'].rootAssembly.rotate(angle=90.0, axisDirection=(0.0, 0.0, 
+    1.0), axisPoint=(5.0, 0.0, 0.0), instanceList=('Part-3-1', ))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-3-1', ), 
+    vector=(0.5, -1.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-3-1', ), 
+    vector=(0.5, 0.0, 0.0))
+mdb.models['Model-1'].rootAssembly.translate(instanceList=('Part-4-1', ), 
+    vector=(6.5, -1.0, 0.0))
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].Material(name='Material-1')
+mdb.models['Model-1'].materials['Material-1'].Elastic(table=((200000000000.0, 
+    0.3), ))
+mdb.models['Model-1'].HomogeneousShellSection(idealization=NO_IDEALIZATION, 
+    integrationRule=SIMPSON, material='Material-1', name='Section-1', 
+    nodalThicknessField='', numIntPts=5, poissonDefinition=DEFAULT, 
+    preIntegrate=OFF, temperature=GRADIENT, thickness=0.5, thicknessField='', 
+    thicknessModulus=None, thicknessType=UNIFORM, useDensity=OFF)
+mdb.models['Model-1'].HomogeneousSolidSection(material='Material-1', name=
+    'Section-2', thickness=None)
+mdb.models['Model-1'].parts['Part-2'].Set(faces=
+    mdb.models['Model-1'].parts['Part-2'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-2'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-2'].sets['Set-1'], sectionName=
+    'Section-2', thicknessAssignment=FROM_SECTION)
+del mdb.models['Model-1'].sections['Section-1']
+mdb.models['Model-1'].sections.changeKey(fromName='Section-2', toName=
+    'Section-1')
+mdb.models['Model-1'].parts['Part-2'].sectionAssignments[0].setValues(
+    sectionName='Section-1')
+mdb.models['Model-1'].parts['Part-3'].Set(faces=
+    mdb.models['Model-1'].parts['Part-3'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-3'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-3'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-4'].Set(faces=
+    mdb.models['Model-1'].parts['Part-4'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-4'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-4'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+mdb.models['Model-1'].parts['Part-5'].Set(faces=
+    mdb.models['Model-1'].parts['Part-5'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ), name='Set-1')
+mdb.models['Model-1'].parts['Part-5'].SectionAssignment(offset=0.0, 
+    offsetField='', offsetType=MIDDLE_SURFACE, region=
+    mdb.models['Model-1'].parts['Part-5'].sets['Set-1'], sectionName=
+    'Section-1', thicknessAssignment=FROM_SECTION)
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Part-2'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-2'].generateMesh()
+mdb.models['Model-1'].parts['Part-2'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['Part-2'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-2'].setMeshControls(elemShape=TRI, regions=
+    mdb.models['Model-1'].parts['Part-2'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-2'].generateMesh()
+mdb.models['Model-1'].parts['Part-3'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.1)
+mdb.models['Model-1'].parts['Part-3'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-3'].generateMesh()
+mdb.models['Model-1'].parts['Part-3'].deleteMesh(regions=
+    mdb.models['Model-1'].parts['Part-3'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-3'].setMeshControls(elemShape=TRI, regions=
+    mdb.models['Model-1'].parts['Part-3'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-3'].generateMesh()
+mdb.models['Model-1'].parts['Part-4'].setMeshControls(elemShape=TRI, regions=
+    mdb.models['Model-1'].parts['Part-4'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-4'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-4'].generateMesh()
+mdb.models['Model-1'].parts['Part-5'].setMeshControls(elemShape=TRI, regions=
+    mdb.models['Model-1'].parts['Part-5'].faces.getSequenceFromMask(('[#1 ]', 
+    ), ))
+mdb.models['Model-1'].parts['Part-5'].seedPart(deviationFactor=0.1, 
+    minSizeFactor=0.1, size=0.5)
+mdb.models['Model-1'].parts['Part-5'].generateMesh()
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].StaticStep(name='Step-1', previous='Initial')
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-1', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].edges.getSequenceFromMask(
+    mask=('[#4 ]', ), ))
+mdb.models['Model-1'].Pressure(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', magnitude=50.0, name='Load-1', region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-1'])
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-2', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-3', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].Tie(adjust=ON, main=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-2'], name='Constraint-1', 
+    positionToleranceMethod=COMPUTED, secondary=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-3'], thickness=ON, 
+    tieRotations=ON)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-1', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].vertices.getSequenceFromMask(
+    ('[#8 ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Initial', 
+    distributionType=UNIFORM, fieldName='', localCsys=None, name='BC-1', 
+    region=mdb.models['Model-1'].rootAssembly.sets['Set-1'], u1=UNSET, u2=SET, 
+    ur3=UNSET)
+mdb.models['Model-1'].boundaryConditions['BC-1'].move('Initial', 'Step-1')
+mdb.models['Model-1'].boundaryConditions['BC-1'].setValues(u2=-0.0003)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ), name='Set-2')
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-2', region=mdb.models['Model-1'].rootAssembly.sets['Set-2'])
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.Job(atTime=None, contactPrint=OFF, description='', echoPrint=OFF, 
+    explicitPrecision=SINGLE, getMemoryFromAnalysis=True, historyPrint=OFF, 
+    memory=90, memoryUnits=PERCENTAGE, model='Model-1', modelPrint=OFF, 
+    multiprocessingMode=DEFAULT, name='Job-1', nodalOutputPrecision=SINGLE, 
+    numCpus=1, numGPUs=0, numThreadsPerMpiProcess=1, queue=None, resultsFormat=
+    ODB, scratch='', type=ANALYSIS, userSubroutine='', waitHours=0, 
+    waitMinutes=0)
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-1.odb', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 7464, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THERE ARE 3 UNCONNECTED REGIONS IN THE MODEL.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 24.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-4-1.4 D.O.F. 2 ratio = 19.4447E+15 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-3-1.2 D.O.F. 2 ratio = 1.89746E+15.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-3-1.5 D.O.F. 1 ratio = 7.97346E+15.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-3-1.5 D.O.F. 2 ratio = 13.5119E+15 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing node PART-4-1.1 D.O.F. 1.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing node PART-4-1.1 D.O.F. 2.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'SOLVER PROBLEM.  ZERO PIVOT WHEN PROCESSING NODE 1 INSTANCE PART-4-1 D.O.F. 1', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'SOLVER PROBLEM.  ZERO PIVOT WHEN PROCESSING NODE 1 INSTANCE PART-4-1 D.O.F. 2', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing D.O.F. 1 of 1 nodes. The nodes have been identified in node set WarnNodeSolvProbZeroPiv_1_1_1_1_1.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing D.O.F. 2 of 1 nodes. The nodes have been identified in node set WarnNodeSolvProbZeroPiv_2_1_1_1_1.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 19:40:35 2025', 
+    'jobName': 'Job-1'})
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Set(name='Set-3', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].vertices.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-3', region=mdb.models['Model-1'].rootAssembly.sets['Set-3'])
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ), name='Set-4')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-4', region=mdb.models['Model-1'].rootAssembly.sets['Set-4'], u1=UNSET, 
+    u2=-0.5, ur3=UNSET)
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-4', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-5', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].edges.getSequenceFromMask(
+    ('[#2 ]', ), ))
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].Tie(adjust=ON, main=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-4'], name='Constraint-2', 
+    positionToleranceMethod=COMPUTED, secondary=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-5'], thickness=ON, 
+    tieRotations=ON)
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-1.odb', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 2100, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'THERE ARE 2 UNCONNECTED REGIONS IN THE MODEL.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 24.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Numerical singularity when processing node PART-4-1.4 D.O.F. 2 ratio = 19.4447E+15 .', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing node PART-4-1.1 D.O.F. 1.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing node PART-4-1.1 D.O.F. 2.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'SOLVER PROBLEM.  ZERO PIVOT WHEN PROCESSING NODE 1 INSTANCE PART-4-1 D.O.F. 1', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'SOLVER PROBLEM.  ZERO PIVOT WHEN PROCESSING NODE 1 INSTANCE PART-4-1 D.O.F. 2', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing D.O.F. 1 of 1 nodes. The nodes have been identified in node set WarnNodeSolvProbZeroPiv_1_1_1_1_1.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': STANDARD_PHASE, 
+    'message': 'Solver problem. Zero pivot when processing D.O.F. 2 of 1 nodes. The nodes have been identified in node set WarnNodeSolvProbZeroPiv_2_1_1_1_1.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 19:49:59 2025', 
+    'jobName': 'Job-1'})
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-6', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ))
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-7', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-4-1'].edges.getSequenceFromMask(
+    ('[#8 ]', ), ))
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].Tie(adjust=ON, main=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-6'], name='Constraint-3', 
+    positionToleranceMethod=COMPUTED, secondary=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-7'], thickness=ON, 
+    tieRotations=ON)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].edges.getSequenceFromMask(
+    mask=('[#8 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-4-1'].edges.getSequenceFromMask(
+    mask=('[#1 ]', ), ), name='Set-5')
+mdb.models['Model-1'].EncastreBC(createStepName='Step-1', localCsys=None, name=
+    'BC-5', region=mdb.models['Model-1'].rootAssembly.sets['Set-5'])
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-1'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-1']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-1.odb', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 6924, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-1', 'memory': 24.0})
+mdb.jobs['Job-1']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-1', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-1']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-1'})
+mdb.jobs['Job-1']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 19:53:16 2025', 
+    'jobName': 'Job-1'})
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='Job-1', toName='Job-a')
+mdb.jobs['Job-a'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-a']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-a.odb', 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 8548, 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-a', 'memory': 24.0})
+mdb.jobs['Job-a']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-a', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-a']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-a'})
+mdb.jobs['Job-a']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:03:24 2025', 
+    'jobName': 'Job-a'})
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.saveAs(pathName='C:/Users/mofid/Downloads/abaqus_beam_b.cae')
+mdb.jobs.changeKey(fromName='Job-a', toName='Job-b')
+mdb.models['Model-1'].boundaryConditions['BC-4'].setValues(u2=0.5)
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-b'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-b']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-b.odb', 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 2020, 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-b', 'memory': 24.0})
+mdb.jobs['Job-b']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-b', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-b']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-b'})
+mdb.jobs['Job-b']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:15:36 2025', 
+    'jobName': 'Job-b'})
+# Save by mofid on 2025_02_03-20.20.35; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].parts['Part-2'].Set(elements=
+    mdb.models['Model-1'].parts['Part-2'].elements.getSequenceFromMask(mask=(
+    '[#0 #ffffff00 #ffff ]', ), ), name='Set-2')
+mdb.models['Model-1'].parts['Part-2'].sets.changeKey(fromName='Set-2', toName=
+    'Set-top-1')
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].parts['Part-5'].Set(elements=
+    mdb.models['Model-1'].parts['Part-5'].elements.getSequenceFromMask(mask=(
+    '[#fff000 ]', ), ), name='Set-top-2')
+# Save by mofid on 2025_02_03-20.30.46; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.models['Model-1'].rootAssembly.Set(name='Set-topp', nodes=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].nodes.getSequenceFromMask(
+    mask=('[#0 #60000000 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].nodes.getSequenceFromMask(
+    mask=('[#1fc000 ]', ), ))
+mdb.models['Model-1'].rootAssembly.SetFromNodeLabels(name='Set-toppp', 
+    nodeLabels=(('Part-2-1', (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 
+    15, 16, 17, 18, 19, 20)), ), unsorted=True)
+mdb.models['Model-1'].rootAssembly.Set(name='Set-down', nodes=
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].nodes.getSequenceFromMask(
+    mask=('[#f7a ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].nodes.getSequenceFromMask(
+    mask=('[#21 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].nodes.getSequenceFromMask(
+    mask=('[#fffffbb9 #13e00fff ]', ), ))
+mdb.models['Model-1'].Temperature(createStepName='Step-1', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(100.0, ), name='Predefined Field-1', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-topp'])
+mdb.models['Model-1'].Temperature(createStepName='Step-1', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(100.0, ), name='Predefined Field-2', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-toppp'])
+del mdb.models['Model-1'].rootAssembly.sets['Set-toppp']
+mdb.models['Model-1'].Temperature(createStepName='Step-1', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(-50.0, ), name='Predefined Field-3', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-down'])
+# Save by mofid on 2025_02_03-20.35.14; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].boundaryConditions['BC-4'].setValues(u2=-0.5)
+# Save by mofid on 2025_02_03-20.35.43; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs.changeKey(fromName='Job-b', toName='Job-c')
+del mdb.models['Model-1'].predefinedFields['Predefined Field-2']
+# Save by mofid on 2025_02_03-20.37.00; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 2568, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:37:51 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].loads['Load-1'].setValues(magnitude=100.0)
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 11116, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:41:35 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].parts['Part-5'].MaterialOrientation(
+    additionalRotationType=ROTATION_NONE, axis=AXIS_3, fieldName='', localCsys=
+    None, orientationType=GLOBAL, region=Region(
+    faces=mdb.models['Model-1'].parts['Part-5'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), stackDirection=STACK_3)
+mdb.models['Model-1'].parts['Part-4'].MaterialOrientation(
+    additionalRotationType=ROTATION_NONE, axis=AXIS_3, fieldName='', localCsys=
+    None, orientationType=GLOBAL, region=Region(
+    faces=mdb.models['Model-1'].parts['Part-4'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), stackDirection=STACK_3)
+mdb.models['Model-1'].parts['Part-3'].MaterialOrientation(
+    additionalRotationType=ROTATION_NONE, axis=AXIS_3, fieldName='', localCsys=
+    None, orientationType=GLOBAL, region=Region(
+    faces=mdb.models['Model-1'].parts['Part-3'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), stackDirection=STACK_3)
+mdb.models['Model-1'].parts['Part-2'].MaterialOrientation(
+    additionalRotationType=ROTATION_NONE, axis=AXIS_3, fieldName='', localCsys=
+    None, orientationType=GLOBAL, region=Region(
+    faces=mdb.models['Model-1'].parts['Part-2'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )), stackDirection=STACK_3)
+# Save by mofid on 2025_02_03-20.48.48; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.regenerate()
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 5592, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:49:13 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='Set-8')
+mdb.models['Model-1'].PorePressureBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, magnitude=100.0, name=
+    'BC-6', region=mdb.models['Model-1'].rootAssembly.sets['Set-8'])
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 10312, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:51:48 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), name='Set-9')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-7', region=mdb.models['Model-1'].rootAssembly.sets['Set-9'], u1=UNSET, 
+    u2=-1e-05, ur3=UNSET)
+# Save by mofid on 2025_02_03-20.52.52; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '2 *TIE dependent nodes have specified boundary conditions.  Their associated *TIE independent nodes have, however, conflicting boundary conditions. Please resolve these conflicting boundary conditions. The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieInc.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ), faces=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-10')
+mdb.models['Model-1'].boundaryConditions['BC-7'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-10'])
+# Save by mofid on 2025_02_03-20.53.58; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '2 *TIE dependent nodes have specified boundary conditions.  Their associated *TIE independent nodes have, however, conflicting boundary conditions. Please resolve these conflicting boundary conditions. The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieInc.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '4 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+del mdb.models['Model-1'].boundaryConditions['BC-7']
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-8', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    mask=('[#f ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].edges.getSequenceFromMask(
+    mask=('[#7 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].edges.getSequenceFromMask(
+    mask=('[#f ]', ), ))
+mdb.models['Model-1'].loads['Load-1'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-8'])
+# Save by mofid on 2025_02_03-20.56.23; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 5912, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 20:56:45 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].loads['Load-1'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-1'])
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-11')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-7', region=mdb.models['Model-1'].rootAssembly.sets['Set-11'], u1=UNSET, 
+    u2=-1e-05, ur3=UNSET)
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].edges.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-12')
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-8', region=mdb.models['Model-1'].rootAssembly.sets['Set-12'], u1=UNSET, 
+    u2=-1e-05, ur3=UNSET)
+# Save by mofid on 2025_02_03-20.59.09; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '3 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].boundaryConditions['BC-8'].suppress()
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+del mdb.models['Model-1'].boundaryConditions['BC-8']
+del mdb.models['Model-1'].boundaryConditions['BC-7']
+# Save by mofid on 2025_02_03-21.00.30; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-9', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    mask=('[#f ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-5-1'].edges.getSequenceFromMask(
+    mask=('[#f ]', ), ))
+mdb.models['Model-1'].loads['Load-1'].setValues(magnitude=-100.0, region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-9'])
+# Save by mofid on 2025_02_03-21.01.23; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 10812, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 21:01:46 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Surface(name='Surf-10', side1Edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].edges.getSequenceFromMask(
+    ('[#4 ]', ), ))
+mdb.models['Model-1'].loads['Load-1'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.surfaces['Surf-10'])
+mdb.models['Model-1'].predefinedFields['Predefined Field-3'].setValues(
+    magnitudes=(100.0, ))
+mdb.models['Model-1'].rootAssembly.Set(edges=
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].edges.getSequenceFromMask(
+    mask=('[#5 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-4-1'].edges.getSequenceFromMask(
+    mask=('[#e ]', ), ), faces=
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-4-1'].faces.getSequenceFromMask(
+    mask=('[#1 ]', ), ), name='Set-13', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-4-1'].vertices.getSequenceFromMask(
+    ('[#c ]', ), ))
+mdb.models['Model-1'].Temperature(createStepName='Step-1', 
+    crossSectionDistribution=CONSTANT_THROUGH_THICKNESS, distributionType=
+    UNIFORM, magnitudes=(-50.0, ), name='Predefined Field-4', region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-13'])
+# Save by mofid on 2025_02_03-21.04.45; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 9700, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 21:05:06 2025', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 10136, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 21:06:49 2025', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Set(name='Set-14', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].vertices.getSequenceFromMask(
+    mask=('[#6 ]', ), ))
+mdb.models['Model-1'].DisplacementBC(amplitude=UNSET, createStepName='Step-1', 
+    distributionType=UNIFORM, fieldName='', fixed=OFF, localCsys=None, name=
+    'BC-7', region=mdb.models['Model-1'].rootAssembly.sets['Set-14'], u1=UNSET, 
+    u2=-1e-05, ur3=UNSET)
+# Save by mofid on 2025_02_03-21.11.31; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Set(name='Set-15', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].vertices.getSequenceFromMask(
+    mask=('[#6 ]', ), ))
+mdb.models['Model-1'].boundaryConditions['BC-7'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-15'])
+# Save by mofid on 2025_02_03-21.12.37; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].rootAssembly.Set(name='Set-16', vertices=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].vertices.getSequenceFromMask(
+    mask=('[#1 ]', ), )+\
+    mdb.models['Model-1'].rootAssembly.instances['Part-3-1'].vertices.getSequenceFromMask(
+    mask=('[#4 ]', ), ))
+mdb.models['Model-1'].boundaryConditions['BC-7'].setValues(region=
+    mdb.models['Model-1'].rootAssembly.sets['Set-16'])
+# Save by mofid on 2025_02_03-21.13.29; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.models['Model-1'].Gravity(comp2=-0.98, createStepName='Step-1', 
+    distributionType=UNIFORM, field='', name='Load-2')
+mdb.models['Model-1'].rootAssembly.Set(faces=
+    mdb.models['Model-1'].rootAssembly.instances['Part-2-1'].faces.getSequenceFromMask(
+    ('[#1 ]', ), ), name='Set-17')
+mdb.models['Model-1'].BodyForce(comp2=-19.0, createStepName='Step-1', name=
+    'Load-3', region=mdb.models['Model-1'].rootAssembly.sets['Set-17'])
+# Save by mofid on 2025_02_03-21.16.47; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'LOAD TYPE GRAV CANNOT BE APPLIED TO THE WHOLE MODEL. EITHER THE MATERIAL DENSITY HAS NOT BEEN SPECIFIED OR THE MODEL DOES NOT CONTAIN ANY ELEMENTS THAT SUPPORT THIS LOAD TYPE.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'ELEMENT SET _Whole_Model_GRAV_Elset HAS NOT BEEN DEFINED', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'IN THIS TYPE OF ANALYSIS ONE WOULD NORMALLY EXPECT THAT A DENSITY FOR MATERIAL MATERIAL-1 WOULD BE DEFINED.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': 'THERE ARE NO SOURCES OF INERTIA IN THIS MODEL. IT IS NECESSARY TO DEFINE A MATERIAL DENSITY OR LUMPED MASS OR INPUT THE MASS MATRIX FOR A PART OF THE MODEL USING THE MATRIX INPUT CAPABILITY FOR DYNAMIC ANALYSIS OR FOR GRAVITY LOADS.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+del mdb.models['Model-1'].loads['Load-2']
+# Save by mofid on 2025_02_03-21.17.40; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {'phase': BATCHPRE_PHASE, 
+    'message': '1 nodes have dof on which velocity/displacement/acceleration/base motion etc. constraints are specified simultaneously. The nodes have been identified in node set ErrNodeBCRedundantDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ABORTED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase failed due to errors', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ERROR, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_ABORTED, {
+    'message': 'Analysis Input File Processor exited with an error - Please see the  Job-c.dat file for possible error messages if the file exists.', 
+    'jobName': 'Job-c'})
+del mdb.models['Model-1'].boundaryConditions['BC-7']
+del mdb.models['Model-1'].boundaryConditions['BC-6']
+# Save by mofid on 2025_02_03-21.18.55; build 2023 2022_09_28-21.41.55 183150
+from part import *
+from material import *
+from section import *
+from assembly import *
+from step import *
+from interaction import *
+from load import *
+from mesh import *
+from optimization import *
+from job import *
+from sketch import *
+from visualization import *
+from connectorBehavior import *
+mdb.jobs['Job-c'].submit(consistencyChecking=OFF)
+mdb.jobs['Job-c']._Message(STARTED, {'phase': BATCHPRE_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-3-ASSEMBLY_SURF-2), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-5-ASSEMBLY_SURF-4), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'FOR *TIE PAIR (ASSEMBLY_SURF-7-ASSEMBLY_SURF-6), ADJUSTED NODES WITH VERY SMALL ADJUSTMENTS WERE NOT PRINTED. SPECIFY *PREPRINT,MODEL=YES FOR COMPLETE PRINTOUT.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'THE OPTION *TEMPERATURE IS USED BUT THE OPTION *INITIAL CONDITIONS,TYPE=TEMPERATURE IS NOT. THE INITIAL TEMPERATURE VALUES ARE ASSUMED TO BE ZERO.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': 'One or more *TIE dependent nodes have specified boundary conditions. The boundary conditions from these nodes will be transferred to the associated *TIE independent nodes.The *TIE dependent and independent nodes have been identified in node set WarnNodeOverconBoundTieMov.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(WARNING, {'phase': BATCHPRE_PHASE, 
+    'message': '2 nodes have dof on which incorrect boundary conditions may have been specified. The nodes have been identified in node set WarnNodeBCIncorrectDof.', 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FILE, {'phase': BATCHPRE_PHASE, 
+    'file': 'C:\\DirectoryName\\Job-c.odb', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': BATCHPRE_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STARTED, {'phase': STANDARD_PHASE, 
+    'clientHost': 'DESKTOP-QCIN5NE', 'handle': 10540, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MEMORY_ESTIMATE, {'phase': STANDARD_PHASE, 
+    'jobName': 'Job-c', 'memory': 24.0})
+mdb.jobs['Job-c']._Message(PHYSICAL_MEMORY, {'phase': STANDARD_PHASE, 
+    'physical_memory': 8118.0, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(MINIMUM_MEMORY, {'minimum_memory': 17.0, 
+    'phase': STANDARD_PHASE, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(ODB_FRAME, {'phase': STANDARD_PHASE, 'step': 0, 
+    'frame': 1, 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(STATUS, {'totalTime': 1.0, 'attempts': 1, 
+    'timeIncrement': 1.0, 'increment': 1, 'stepTime': 1.0, 'step': 1, 
+    'jobName': 'Job-c', 'severe': 0, 'iterations': 1, 'phase': STANDARD_PHASE, 
+    'equilibrium': 1})
+mdb.jobs['Job-c']._Message(END_STEP, {'phase': STANDARD_PHASE, 'stepId': 1, 
+    'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(COMPLETED, {'phase': STANDARD_PHASE, 
+    'message': 'Analysis phase complete', 'jobName': 'Job-c'})
+mdb.jobs['Job-c']._Message(JOB_COMPLETED, {'time': 'Mon Feb  3 21:19:16 2025', 
+    'jobName': 'Job-c'})
+# Save by mofid on 2025_02_03-21.20.56; build 2023 2022_09_28-21.41.55 183150
